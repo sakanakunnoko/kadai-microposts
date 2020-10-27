@@ -1,3 +1,6 @@
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
 <!--ジャンボトロン（jumbotron）は、WEBサイトのトップ見出しのデザイン-->
 <div class="center jumbotron">
   <div class="text-center">
@@ -5,3 +8,4 @@
     <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
   </div>
 </div>
+<% end %>
