@@ -7,12 +7,14 @@ class UsersController < ApplicationController
  #レコードの内容を表示
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.order(id: :desc).page(params[:page])
+    counts(@user)
   end
  #リソースを新規作成
   def new
     @user = User.new
   end
- #保存
+ #newから受け取る
   def create
     @user = User.new(user_params)
 
