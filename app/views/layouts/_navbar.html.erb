@@ -15,7 +15,9 @@
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item">Logout</li>
+              <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item"><%= link_to 'お気に入り一覧', likes_user_path(current_user) %></li>
             </ul>
           </li>
         <% else %>
